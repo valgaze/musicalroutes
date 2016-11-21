@@ -69,7 +69,6 @@ function _play(opts, next) {
     });
 
     cmd.on('exit', function (code) {
-        console.log("EXIT!");
         next();
     });
 

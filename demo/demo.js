@@ -1,11 +1,11 @@
 var app = require('express')();
-var musicalroutes = require("./index.js");
+var musicalroutes = require("musicalroutes");
 var port = process.env.port || 8080;
 var response = function(req,res) { res.send("You hit " + req.baseUrl)}
 
-app.use("/right", musicalroutes({source:"https://www.youtube.com/watch?v=barWV7RWkq0"}), response);
+app.use("/win", musicalroutes({source:"https://www.youtube.com/watch?v=TsdiIB15R-0"}), response);
 
-app.use("/wrong", musicalroutes({source:"https://www.youtube.com/watch?v=_asNhzXq72w"}), response);
+app.use("/lose", musicalroutes({source:"https://www.youtube.com/watch?v=_asNhzXq72w"}), response);
 
 app.use("/tunes", musicalroutes(), response);
 

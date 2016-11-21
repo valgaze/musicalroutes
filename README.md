@@ -1,4 +1,4 @@
-Music Routes-- likely the world's first noisy express.js middleware
+Music Routes-- likely the world's first/last noisy express.js middleware
 
 tl;dr: Play a noise or song when a route is hit, just a toy
 ```js
