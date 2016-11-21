@@ -6,7 +6,7 @@ tl;dr:
 const musicalroutes = require("musicalroutes");
 app.use("/tunes", musicalroutes());
 ```
-(See companion blog post here: ***##***)
+(See companion blog post here: https://medium.com/@valgaze/musical-middleware-for-expressjs-2ebc2cf0d4cd#.js4ittoyf)
 
 ------
 
