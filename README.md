@@ -1,13 +1,15 @@
 Music Routes-- likely the world's first noisy express.js middleware
 
-tl;dr:
+tl;dr: Play a noise or song when a route is hit, just a toy
 ```js
 //const app = require('express')();
 const musicalroutes = require("musicalroutes");
 app.use("/tunes", musicalroutes());
 ```
+
 (See companion blog post here: https://medium.com/@valgaze/musical-middleware-for-expressjs-2ebc2cf0d4cd#.js4ittoyf)
 
+Node 4.2.6+, Mac only for now
 ------
 
 ## Demo function to ensure all is working smoothly (you should hear a song):
