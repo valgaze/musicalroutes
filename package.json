@@ -15,7 +15,6 @@
   "author": "Victor Algaze",
   "license": "GNU",
   "dependencies": {
-    "express": "^4.14.0",
     "npmusic": "^1.0.2"
   }
 }
