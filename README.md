@@ -25,13 +25,13 @@ Node 4.2.6+, Mac only for now
 1. **Source**: Custom audio source (absolute path or youtube URL)
 
     ```js
-    app.use("/tunes", musicalport({"source":"https://www.youtube.com/watch?v=3GwjfUFyY6M"});
+    app.use("/tunes", musicalroutes({"source":"https://www.youtube.com/watch?v=3GwjfUFyY6M"});
     ```
 
 2. **Predicate**: Optional function that resolves to true/false that determines if audio source plays (callback takes the full req/res object)
 
     ```js
-    app.use("/products/:id", musicalport({
+    app.use("/products/:id", musicalroutes({
         "source": "https://www.youtube.com/watch?v=3GwjfUFyY6M",
         predicate: (req, res) => {
             if (req.params.id == 7) {

@@ -1,4 +1,11 @@
 "use strict";
+var CONFIG = require("./config.js");
+
+if (!CONFIG["platform_supported"]) {
+  console.log("\n***Warning***");
+  console.log("Your machine's operating system is not offically supported at this time");
+  console.log("This is not dangerous, but you may experience abnormal behavior\n");
+}
 
 exports = module.exports = function () {
     var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -24,7 +31,7 @@ exports = module.exports = function () {
 };
 
 exports.demo = function () {
-    var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "https://www.youtube.com/watch?v=DUMq6imrMmI";
+    var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : CONFIG["demo_source"];
 
     var config = { "source": url };
     var inst = _play(config);
@@ -45,7 +52,9 @@ function _play(opts, next) {
     debug("Invoking local npmusic with flags:", flags);
     var cmd = spawn('./node_modules/.bin/npmusic', flags); //Need flag builder
 
-    next();
+    if (next) {
+      next();
+    }
 
     if (opts.timeout) {
         var SONG_START_FUDGE_FACTOR = 4000; //ms
@@ -66,10 +75,6 @@ function _play(opts, next) {
 
     cmd.stderr.on('data', function (data) {
         debug(data.toString());
-    });
-
-    cmd.on('exit', function (code) {
-        next();
     });
 
     return cmd;
