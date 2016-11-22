@@ -14,7 +14,7 @@ Node 4.2.6+, Mac only for now
 
 ## Demo function to ensure all is working smoothly (you should hear a song):
 
-    ```sh
+    ```js
     const tunes = require("musicalroutes");
     tunes.demo();
     ```
